@@ -1,0 +1,71 @@
+:root {
+    --tkyx-dk-bl: #02308C;
+    --tkyx-m-bl: #1A4B8C;
+    --tkyx-o-bl: #234572;
+    --tkyx-yell: #F2EEB3;
+    --tkyx-wh: #F2F2F2;
+}
+
+html {
+    background-color: var(--tkyx-wh);
+}
+
+body {
+    color: var(--tkyx-wh);
+}
+
+.loc-card {
+    padding: 7rem 12rem 8rem 12rem;
+}
+
+.loc-card:hover {
+    cursor: pointer;
+}
+
+.location {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    font-weight: 300;
+}
+
+.weather-info {
+    margin-top: 2rem;
+}
+
+.img-container {
+    width: 7rem;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    width: 6rem;
+    height: auto;
+}
+
+.temp {
+    height: 6rem;
+}
+
+.temp-desc {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+/*Hourly Weather Report*/
+#fullscreen {
+    display: none;
+    background-color: red;
+}
+
+/*Salesforce Design Overrides*/
+.slds-card + .slds-card { 
+    margin-top: 0;
+}
+
+.slds-card, article.slds-card {
+    background-color: var(--tkyx-o-bl) !important;
+}

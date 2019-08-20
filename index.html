@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/styles/salesforce-lightning-design-system.css"/>
+    <link rel="stylesheet" type="text/css" href="css/assets/styles/salesforce-lightning-design-system.css"/>
+    <link rel="stylesheet" type="text/css" href="css/assets/styles/tkyx.css"/>
     <title>Document</title>
 </head>
 <body>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col">1</div>
-        <div class="slds-col">2</div>
+    <div class="slds-grid slds-grid_align-space slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-card loc-card">
+            <article class="slds-card">
+                <div class="slds-media_body">
+                    <h2 class="location">Milwaukee, WI</h2>
+                </div>
+                <div class="weather-info slds-grid slds-grid_align-space slds-gutters">
+                    <div class="slds-col img-container temp temp-icon">
+                        <img src="css/assets/images/sun_test.png"/>
+                    </div>
+                    <div class="slds-col temp temp-desc">
+                        <span>76 &deg;</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div id="fullscreen" class="slds-grid slds-grid_align-space slds-m-around_medium">
+        <div class="slds-col slds-size_1-of-1">
+            <button id="exit" class="slds-button slds-button-neutral">exit</button>
+            <h1>Full Weather Report</h1>
+        </div>
     </div>
 </body>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </html>

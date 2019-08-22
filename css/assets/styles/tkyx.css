@@ -14,6 +14,12 @@ body {
     color: var(--tkyx-wh);
 }
 
+#transparent {
+    color: var(--tkyx-wh);
+    opacity: 1;
+}
+
+.city-block {margin-top: 2rem;}
 .loc-card {
     padding: 7rem 12rem 8rem 12rem;
 }
@@ -38,9 +44,9 @@ body {
     height: auto;
 }
 
-img {
+img.temp-icon {
     max-width: 100%;
-    width: 6rem;
+    width: 7rem;
     height: auto;
 }
 
@@ -55,10 +61,40 @@ img {
     font-weight: 300;
 }
 
-/*Hourly Weather Report*/
+/*Weekday Display and Hourly Display*/
 #fullscreen {
     display: none;
-    background-color: red;
+    background-color: var(--tkyx-m-bl);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    z-index: 1000;
+}
+
+#temp-city {
+    margin: 0 2.5rem;
+    font-size: 3rem;
+}
+
+#five-day {
+    margin-top: 4rem;
+    background-color: var(--tkyx-o-bl);
+}
+.forecast-icon {
+    width: 3rem;
+    height: auto;
+    margin: 0.75rem 0;
+}
+
+.date {padding: 1rem;}
+
+.date p {text-align: center;}
+
+.date-block:hover {
+    cursor: pointer;
+    background-color: var(--tkyx-m-bl);
+    border-top: 0.5px solid var(--tkyx-yell);
 }
 
 /*Salesforce Design Overrides*/

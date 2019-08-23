@@ -23,7 +23,6 @@ function convert_html_timestamp(clicked_date) {
     helper function for get_hourly_report*/
     clicked_date = clicked_date.replace(",", "");
     var date_array = clicked_date.split(" ");
-    //num.toString().padStart(4, "0");
     var month_num = MONTHS.indexOf(date_array[0]) + 1;
     var month_str = month_num.toString().padStart(2,"0");
     var day_str = date_array[1].padStart(2,"0");
@@ -166,7 +165,7 @@ function get_hourly_report(json, date) {
     for (i=0; i < json.list.length; i++) {
         //separate date and time to determine weather icon later
         var time_stamp = json.list[i].dt_txt;
-        time_arr = time_stamp.split(" ");
+        var time_arr = time_stamp.split(" ");
         var year_month_day = time_arr[0];
         var hour_min_sec = time_arr[1];
         if (year_month_day == date) {
@@ -207,7 +206,7 @@ function update_hourly_report(temp, desc, time) {
 }
 
 $(document).ready(function() {
-    $.ajax({
+    $.ajax({    //AJAX request for all four cities current weather
         type: "POST",
         url: "http://api.openweathermap.org/data/2.5/group?id="+api_cities+"&appid="+app_id+"&units=imperial",
         dataType: "json",
@@ -219,6 +218,7 @@ $(document).ready(function() {
         }
     });
 
+    //display full weather report view on click of any city card
     $('.loc-card').click(function() {
         //first grab city and temp for fullscreen view
         var $city_state = $(this).find('h2.location').text();
@@ -233,17 +233,23 @@ $(document).ready(function() {
         if ($('#five-day').is(':empty')) {
             display_weekdays($curr_city);
         }
+        //go to top of page and display hourly full weather report view
+        $('html, body').animate({
+            scrollTop: $("#fullscreen").offset().top
+        }, 500);
         $('#transparent').css("opacity", "0.6");
         $('#fullscreen').show('slow');
         $('#five-day').show('slow');
     });
 
-    $('#exit').click(function() {
+    //allow exit from fullscreen weather report via exit icon
+    $('#full-exit').click(function() {
         $('#fullscreen').hide('slow');
         $('#hourly-report').hide();
         $('#transparent').css("opacity", "1");
     });
 
+    //display hourly weather data for date clicked on
     $(document).on("click", "div.date", function() {
         var clicked_date = $(this).find('p.date').text();
         var converted_timestamp = convert_html_timestamp(clicked_date);
@@ -254,7 +260,8 @@ $(document).ready(function() {
             dataType: "json",
             success: function(result, status, xhr) {
                 //update date header
-                $('#hourly-date').html(clicked_date);   
+                $('.hourly-date').html(clicked_date);
+                //$(".hour-head").append(" <h2 id='hourly-date'> " + clicked_date + "</h2>"); 
                 //clear contents from any previous user clicks before displaying new data
                 $('.weather-block').remove()
                 get_hourly_report(result, converted_timestamp);
@@ -267,7 +274,27 @@ $(document).ready(function() {
             }
         })
     });
+    //if user clicks outside fullscreen report div, close it
+    $(document).mouseup(function(e) {
+        var container = $("#fullscreen");
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide('slow');
+            $('#hourly-report').hide();
+            $("#transparent").css("opacity", "1");
+        }
+    });
 
+    //if user clicks outside hourly report div, close it
+    $(document).mouseup(function(e) {
+        var container = $("#hourly-report");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide('slow');
+            $('#five-day').show('slow');
+        }
+    });
+
+    //allow exit from hourly report via exit icon
     $('#hourly-exit').click(function() {
         $('#hourly-report').hide('slow');
         $('#five-day').show('slow');

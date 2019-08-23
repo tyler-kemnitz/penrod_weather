@@ -85,8 +85,8 @@
     <div id="fullscreen" class="slds-grid slds-grid_align-space slds-m-around_medium">
         <div class="slds-col slds-size_1-of-1">
             <div class="slds-grid slds-grid_vertical-align-start slds-m-around_small">
-                <div class="slds-col slds-size_1-of-1">
-                    <button id="exit" class="slds-button slds-button-neutral">exit</button>
+                <div class="slds-col slds-size_1-of-1 exit-icon">
+                        <img aria-hidden="true" src="css/assets/icons/utility/close_60.png" class="slds-icon slds-icon_small" id="full-exit" title="exit"/>
                 </div>
             </div>
             <div id="current-overview" class="slds-grid slds-grid_align-center">
@@ -105,14 +105,14 @@
             </div>
             <div id="five-day" class="slds-grid slds-grid_align-space"></div>
             <div id="hourly-report" class="slds-grid slds-grid-size_1-of-1 slds-scrollable_y">
-                <div class="slds-grid_vertical-align-start slds-m-around_medium">
-                    <div class="slds-col slds-size_1-of-1">
-                        <button id ="hourly-exit" class="slds-button slds-button-neutral">Exit</button>
+                <div class="slds-grid_vertical-align-start slds-m-around_medium">   
+                    <div class="slds-col slds-size_1-of-1 exit-icon">
+                        <img aria-hidden="true" src="css/assets/icons/utility/close_60.png" class="slds-icon slds-icon_small" id="hourly-exit" title="exit"/>
                     </div>
                 </div>
                 <div class='slds-grid_vertical-align-center'>
-                    <div id="hour-head" class='slds-col slds-size_1-of-1'>
-                        <h2 id='hourly-date'></h2>
+                    <div class='slds-col slds-size_1-of-1'>
+                        <h2 class='hourly-date'></h2>
                     </div>
                 </div>
             </div>

@@ -29,6 +29,11 @@ body {
     text-transform: uppercase;
     font-size: 3.5rem;
 }
+
+.exit-icon:hover {
+    cursor: pointer;
+}
+
 /*City Overview*/
 .city-block *:hover {
     cursor: pointer;
@@ -106,10 +111,10 @@ img.temp-icon {
 #hourly-report {
     display: none;
     background-color: var(--tkyx-o-bl);
-    max-height: 50rem;
+    max-height: 50vh;
 }
 
-#hourly-date {
+.hourly-date {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -165,4 +170,14 @@ img.temp-icon {
 
 .slds-card, article.slds-card {
     background-color: var(--tkyx-o-bl) !important;
+}
+
+/*Media Queries*/ 
+@media (max-width: 600px) {
+    #temp-city {
+        font-size: 1.5rem;
+    }
+    .date {
+        font-size: 1rem;
+    }
 }

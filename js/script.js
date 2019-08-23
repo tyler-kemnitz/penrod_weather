@@ -184,8 +184,8 @@ function get_hourly_report(json, date) {
     //if no data was found for a particular day, update page to let user know
     if (block_count == 0) {
         $no_data = (" <p class='sorry-msg'>Apologies; Currently no weather available for this day.</p> ");
-        $('#hour-head').append($no_data);
-    } else $('#hour-head').text("");
+        $('.hour-head').append($no_data);
+    } else $('.hour-head').text("");
 }
 
 function update_hourly_report(temp, desc, time) {

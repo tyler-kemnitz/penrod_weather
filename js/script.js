@@ -83,23 +83,23 @@ function determine_weather_icon(desc, time) {
 
     //check for precipatation-type weather first 
     if (first_digit == 2 || first_digit == 3 || first_digit == 5 || desc == 781) {
-        return 'css/assets/images/rain.png';
+        return './css/assets/images/rain.png';
     } else if (first_digit == 6) {
-        return 'css/assets/images/snow.png';
+        return './css/assets/images/snow.png';
     } else if (first_digit == 7) {
-        return 'css/assets/images/part_cloud.png';
+        return './css/assets/images/part_cloud.png';
     }
     //check for cloudy/clear weather based on time
     if (hour <= 4 || hour >= 18) {
         if (desc == 800) {
-            return 'css/assets/images/moon.png';
+            return './css/assets/images/moon.png';
         } else {
-            return 'css/assets/images/moon_cloudy.png';
+            return './css/assets/images/moon_cloudy.png';
         }
     } else {
         if (desc == 800) {
-            return 'css/assets/images/sunny.png';
-        } else return 'css/assets/images/part_cloud.png';
+            return './css/assets/images/sunny.png';
+        } else return './css/assets/images/part_cloud.png';
     }
 }
 

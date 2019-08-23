@@ -19,13 +19,24 @@ body {
     opacity: 1;
 }
 
-.city-block {margin-top: 2rem;}
-.loc-card {
-    padding: 7rem 12rem 8rem 12rem;
+#header {
+    margin: 4rem 0;
 }
 
-.loc-card:hover {
+#intro {
+    color: var(--tkyx-o-bl);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+/*City Overview*/
+.city-block *:hover {
     cursor: pointer;
+}
+
+.loc-card {
+    padding: 7rem 12rem 8rem 12rem;
+    margin: 12px !important;
 }
 
 .location {
@@ -61,6 +72,12 @@ img.temp-icon {
     font-weight: 300;
 }
 
+.rise-set {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1.5rem 2rem;
+}
+
 /*Weekday Display and Hourly Display*/
 #fullscreen {
     display: none;
@@ -72,6 +89,10 @@ img.temp-icon {
     z-index: 1000;
 }
 
+#current-overview {
+    padding: 2rem;
+}
+
 #temp-city {
     margin: 0 2.5rem;
     font-size: 3rem;
@@ -81,13 +102,47 @@ img.temp-icon {
     margin-top: 4rem;
     background-color: var(--tkyx-o-bl);
 }
+
+#hourly-report {
+    display: none;
+    background-color: var(--tkyx-o-bl);
+    max-height: 50rem;
+}
+
+#hourly-date {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-block {
+    padding: 1rem;
+}
+
+.weather-block:hover {
+    background-color: var(--tkyx-m-bl);
+}
+
+.weather-time {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+.weather-hl {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 1.25rem;
+}
+
 .forecast-icon {
     width: 3rem;
     height: auto;
     margin: 0.75rem 0;
 }
 
-.date {padding: 1rem;}
+.date {padding: 2rem;}
 
 .date p {text-align: center;}
 
@@ -95,6 +150,12 @@ img.temp-icon {
     cursor: pointer;
     background-color: var(--tkyx-m-bl);
     border-top: 0.5px solid var(--tkyx-yell);
+}
+
+.sorry-msg {
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 1rem;
 }
 
 /*Salesforce Design Overrides*/

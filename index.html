@@ -10,9 +10,14 @@
 </head>
 <body>
     <div id="transparent">
+        <div id="header" class="slds-grid slds-grid_align-center">
+            <div class="slds-col slds-size_1-of-1">
+                <div id="intro" class="slds-text-heading_large">Penrod Weather Dashboard</div>
+            </div>
+        </div>
         <div class="slds-grid slds-grid_align-space slds-gutters slds-wrap city-block">
             <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-card loc-card">
-                <article class="slds-card">
+                <article class="slds-card weather-card">
                     <div class="slds-media_body">
                         <h2 class="location">Milwaukee, WI</h2>
                     </div>
@@ -24,6 +29,7 @@
                             <span class="5263058 temp"></span>
                         </div>
                     </div>
+                    <div class="5263058 slds-grid slds-grid_align-center"></div>
                 </article>
             </div>
             <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-card loc-card">
@@ -39,10 +45,9 @@
                             <span class="4887398 temp"></span>
                         </div>
                     </div>
+                    <div class="4887398 slds-grid slds-grid_align-center"></div>
                 </article>
             </div>
-        </div>
-        <div class="slds-grid slds-grid_align-space slds-gutters slds-wrap city-block">
             <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-card loc-card">
                 <article class="slds-card">
                     <div class="slds-media_body">
@@ -56,6 +61,7 @@
                             <span class="5037649 temp"></span>
                         </div>
                     </div>
+                    <div class="5037649 slds-grid slds-grid_align-center"></div>
                 </article>
             </div>
             <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-card loc-card">
@@ -71,6 +77,7 @@
                             <span class="4684888 temp"></span>
                         </div>
                     </div>
+                    <div class="4684888 slds-grid slds-grid_align-center"></div>
                 </article>
             </div>
         </div>
@@ -82,7 +89,7 @@
                     <button id="exit" class="slds-button slds-button-neutral">exit</button>
                 </div>
             </div>
-            <div class="slds-grid slds-grid_align-center">
+            <div id="current-overview" class="slds-grid slds-grid_align-center">
                 <div class="slds-col temp-icon slds-align-middle">
                     <img id="curr-icon" src=""/>
                 </div>
@@ -97,53 +104,21 @@
                 </div>
             </div>
             <div id="five-day" class="slds-grid slds-grid_align-space"></div>
+            <div id="hourly-report" class="slds-grid slds-grid-size_1-of-1 slds-scrollable_y">
+                <div class="slds-grid_vertical-align-start slds-m-around_medium">
+                    <div class="slds-col slds-size_1-of-1">
+                        <button id ="hourly-exit" class="slds-button slds-button-neutral">Exit</button>
+                    </div>
+                </div>
+                <div class='slds-grid_vertical-align-center'>
+                    <div id="hour-head" class='slds-col slds-size_1-of-1'>
+                        <h2 id='hourly-date'></h2>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </html>
-
-<!--
-                <div class="slds-col slds-grid slds-grid_vertical slds-grid_vertical-align-center">
-                    <div class="slds-col slds-text-heading_medium weather-day">Day</div>
-                    <img class="forecast-icon" src="css/assets/images/rain.png"/>
-                    <div class="slds-col slds-text-heading_small">
-                        <span class="weather-high">High</span>
-                        <span class="weather-low">Low</span>
-                    </div>
-                </div>
-
-                <div class="slds-col slds-grid slds-grid_vertical slds-grid_vertical-align-center">
-                    <div class="slds-col slds-text-heading_medium weather-day">Day</div>
-                    <img class="forecast-icon" src="css/assets/images/rain.png"/>
-                    <div class="slds-col slds-text-heading_small">
-                        <span class="weather-high">High</span>
-                        <span class="weather-low">Low</span>
-                    </div>
-                </div>
-                <div class="slds-col slds-grid slds-grid_vertical slds-grid_vertical-align-center">
-                    <div class="slds-col slds-text-heading_medium weather-day">Day</div>
-                    <img class="forecast-icon" src="css/assets/images/rain.png"/>
-                    <div class="slds-col slds-text-heading_small">
-                        <span class="weather-high">High</span>
-                        <span class="weather-low">Low</span>
-                    </div>
-                </div>
-                <div class="slds-col slds-grid slds-grid_vertical slds-grid_vertical-align-center">
-                    <div class="slds-col slds-text-heading_medium weather-day">Day</div>
-                    <img class="forecast-icon" src="css/assets/images/rain.png"/>
-                    <div class="slds-col slds-text-heading_small">
-                        <span class="weather-high">High</span>
-                        <span class="weather-low">Low</span>
-                    </div>
-                </div>
-                <div class="slds-col slds-grid slds-grid_vertical slds-grid_vertical-align-center">
-                    <div class="slds-col slds-text-heading_medium weather-day">Day</div>
-                    <img class="forecast-icon" src="css/assets/images/rain.png"/>
-                    <div class="slds-col slds-text-heading_small">
-                        <span class="weather-high">High</span>
-                        <span class="weather-low">Low</span>
-                    </div>
-                </div>
-                -->

@@ -122,6 +122,7 @@ function display_weekdays(city_id) {
         var $date_col = $("<div class='slds-col slds-text-heading_medium date'></div>");
         var $weekday_p = $("<p class='weekday'>" + $display_day + "</p>");
         var $date_p = $("<p class='date'>" + $display_month + " " + day + ", " + year + "</p>");
+        //add city ID to date blocks for future API calls
         var $city_identifier = $(" <input type='hidden' id='city-identifier' name='city-identifier' value=" + city_id + "></input");
         //update page
         $('#five-day').append($date_block);
@@ -195,7 +196,7 @@ function update_hourly_report(temp, desc, time) {
     var $img_src = determine_weather_icon(desc, time);
     var $temp_block = $(" <div class='slds-col slds-grid slds-grid_align-center'></div> ");
     var $icon_block = $(" <div class='forecast-icon-container'></div> ");
-    var $icon_col = $("<img class='forecast-icon' src=" + $img_src + " /> ");
+    var $icon_col = $("<img class='forecast-icon' alt='weather-icon' src=" + $img_src + " /> ");
     var $high_low = $(" <span class='weather-hl'>" + temp + "</span> ");
 
     //append to five-day weather report sequentially
@@ -261,7 +262,6 @@ $(document).ready(function() {
             success: function(result, status, xhr) {
                 //update date header
                 $('.hourly-date').html(clicked_date);
-                //$(".hour-head").append(" <h2 id='hourly-date'> " + clicked_date + "</h2>"); 
                 //clear contents from any previous user clicks before displaying new data
                 $('.weather-block').remove()
                 get_hourly_report(result, converted_timestamp);
